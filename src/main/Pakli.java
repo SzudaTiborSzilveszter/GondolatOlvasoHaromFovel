@@ -12,7 +12,7 @@ public class Pakli {
         feltolt();
     }
     private void feltolt() {
-        String[] szinek = {"♠", "♣", "♥", "♦"};
+        String[] szinek = {"🔔", "🍁", "❤️", "🌰"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
         int db = 0;
         for (String szin : szinek) {

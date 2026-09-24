@@ -16,10 +16,10 @@ public class Teszt {
         tesztKeveres();
         tesztKozepsoLap();
         tesztDuplikacio();
-        System.out.println("Lap tesztek:");
+        System.out.println("\nLap tesztek:");
         tesztLapErtek();
         tesztLapSzin();
-        System.out.println("\nMinden teszt sikeres.");
+        System.out.println("\nMinden teszt lefutott.");
     }
 
     private static void tesztLapokSzama() {
@@ -32,7 +32,7 @@ public class Teszt {
             }
         }
         assert db == 21 : "Nem 21 lap van a pakliban";
-        System.out.println("Teszt lapok száma: ");
+        System.out.println("\tTeszt lapok száma: ✔");
     }
 
     private static void tesztNull() {
@@ -41,7 +41,7 @@ public class Teszt {
         for (int i = 1; i < lapok.length; i++) {
             assert lapok[i] != null : "Null lap található a pakliban";
         }
-        System.out.println("Teszt null: ");
+        System.out.println("\tTeszt null: ✔");
     }
 
     private static void tesztAlahuzas() {
@@ -50,7 +50,7 @@ public class Teszt {
         for (int i = 1; i < lapok.length; i++) {
             assert lapok[i].megj().contains("_") : "A lap nevében nincs aláhúzás";
         }
-        System.out.println("Teszt aláhúzás: ");
+        System.out.println("\tTeszt aláhúzás: ✔");
     }    
     
       private static void tesztHaromOszlop() {
@@ -66,7 +66,7 @@ public class Teszt {
             }
             assert db == 3 : "Nem 3 lap van egy sorban";
         }
-        System.out.println("Teszt három oszlop: ");
+        System.out.println("\tTeszt három oszlop: ✔");
     }
 
     private static void tesztOszlopErvenyes() {
@@ -76,7 +76,7 @@ public class Teszt {
         assert !oszlopErvenyes(0);
         assert !oszlopErvenyes(4);
         assert !oszlopErvenyes(-1);
-        System.out.println("Teszt oszlopok száma: ");
+        System.out.println("\tTeszt oszlopok száma: ✔");
     }
 
     private static boolean oszlopErvenyes(int oszlop) {
@@ -95,7 +95,7 @@ public class Teszt {
             }
         }
         assert megvaltozott : "A keverés nem változtatta meg a sorrendet";
-        System.out.println("Teszt keverés: ");
+        System.out.println("\tTeszt keverés: ✔");
     }
      private static void tesztKozepsoLap() {
         for (int oszlop = 1; oszlop <= 3; oszlop++) {
@@ -110,7 +110,7 @@ public class Teszt {
             assert valasztottOszlop.contains(pakli.ezVolt())
                     : "A kiválasztott oszlop nem került középre";
         }
-        System.out.println("Teszt középső lap: ");
+        System.out.println("\tTeszt középső lap: ✔");
     }
 
     private static void tesztDuplikacio() {
@@ -124,7 +124,7 @@ public class Teszt {
                         : "Duplikált lap található a pakliban";
             }
         }
-        System.out.println("Teszt duplikáció: ");
+        System.out.println("\tTeszt duplikáció: ✔");
     }
 
     private static void tesztLapErtek() {
@@ -133,7 +133,7 @@ public class Teszt {
         lap.megj();
         assert eredeti.equals(lap.getErtek())
                 : "A Lap értéke megváltozott";
-        System.out.println("Teszt lap értéke: ");
+        System.out.println("\tTeszt lap értéke: ✔");
     }
 
     private static void tesztLapSzin() {
@@ -142,6 +142,6 @@ public class Teszt {
         lap.megj();
         assert eredeti.equals(lap.getSzin())
                 : "A Lap színe megváltozott";
-        System.out.println("Teszt lap színe: ");
+        System.out.println("\tTeszt lap színe: ✔");
     }
 }

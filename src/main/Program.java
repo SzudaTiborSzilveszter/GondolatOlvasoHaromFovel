@@ -6,6 +6,7 @@ public class Program {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         Pakli pakli = new Pakli();
+        trukk(pakli);
     }
     private static void kirak(Pakli pakli) {
         Lap[] lapok = pakli.getLapok();
@@ -28,5 +29,14 @@ public class Program {
             valasztas = sc.nextInt();
         }
         return valasztas;
+    }
+    
+    private static void trukk(Pakli pakli) {
+        for (int i = 0; i < 3; i++) {
+            kirak(pakli);
+            int valasztas = melyik();
+            pakli.kever(valasztas);
+        }
+        System.out.println("Ez volt: " + pakli.ezVolt().megj());
     }
 }

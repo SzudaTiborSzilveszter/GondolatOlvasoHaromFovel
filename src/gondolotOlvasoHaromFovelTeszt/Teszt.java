@@ -1,4 +1,4 @@
-package GondolotOlvasoHaromFovelTeszt;
+package gondolotOlvasoHaromFovelTeszt;
 
 public class Teszt {
     

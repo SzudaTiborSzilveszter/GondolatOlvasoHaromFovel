@@ -20,6 +20,7 @@ public class Teszt {
         tesztLapErtek();
         tesztLapSzin();
         tesztKulonbozoLapok();
+        tesztOszlopLapokSzama();
         System.out.println("\nMinden teszt lefutott.");
     }
 
@@ -152,5 +153,23 @@ public class Teszt {
         assert !lap1.megj().equals(lap2.megj())
                 : "A különböző lapok neve megegyezik";
         System.out.println("\tTeszt különböző lapok: ✔");
+    }
+    
+    private static void tesztOszlopLapokSzama() {
+        Pakli pakli = new Pakli();
+        Lap[] lapok = pakli.getLapok();
+        
+        for (int oszlop = 1; oszlop <= 3; oszlop++){
+            int db = 0;
+            
+            for (int sor = 0; sor < 7; sor++)
+                { int index = sor * 3 + oszlop;
+                if (lapok[index] != null) {
+                    db++;
+                }
+            }
+            assert db == 7 : "Az " + oszlop + ". oszlopban nem 7 lap van";
+        }
+        System.out.println("\tTeszt oszlopok lapjainak száma: ✔");
     }
 }

@@ -14,7 +14,11 @@ public class Teszt {
         tesztHaromOszlop();
         tesztOszlopErvenyes();
         tesztKeveres();
+        tesztKozepsoLap();
+        tesztDuplikacio();
         System.out.println("Lap tesztek:");
+        tesztLapErtek();
+        tesztLapSzin();
         System.out.println("Minden teszt sikeres.");
     }
 
@@ -87,4 +91,48 @@ public class Teszt {
         }
         assert megvaltozott : "A keverés nem változtatta meg a sorrendet";
     }
+     private static void tesztKozepsoLap() {
+        for (int oszlop = 1; oszlop <= 3; oszlop++) {
+            Pakli pakli = new Pakli();
+            Lap[] eredeti = pakli.getLapok();
+            Set<Lap> valasztottOszlop = new HashSet<>();
+            for (int sor = 0; sor < 7; sor++) {
+                int index = sor * 3 + oszlop;
+                valasztottOszlop.add(eredeti[index]);
+            }
+            pakli.kever(oszlop);
+            assert valasztottOszlop.contains(pakli.ezVolt())
+                    : "A kiválasztott oszlop nem került középre";
+        }
+    }
+
+    private static void tesztDuplikacio() {
+        Pakli pakli = new Pakli();
+        for (int kor = 1; kor <= 3; kor++) {
+            pakli.kever(kor);
+            Lap[] lapok = pakli.getLapok();
+            Set<String> lapNevek = new HashSet<>();
+            for (int i = 1; i < lapok.length; i++) {
+                assert lapNevek.add(lapok[i].megj())
+                        : "Duplikált lap található a pakliban";
+            }
+        }
+    }
+
+    private static void tesztLapErtek() {
+        Lap lap = new Lap("P", "Ász");
+        String eredeti = lap.getErtek();
+        lap.megj();
+        assert eredeti.equals(lap.getErtek())
+                : "A Lap értéke megváltozott";
+    }
+
+    private static void tesztLapSzin() {
+        Lap lap = new Lap("P", "Ász");
+        String eredeti = lap.getSzin();
+        lap.megj();
+        assert eredeti.equals(lap.getSzin())
+                : "A Lap színe megváltozott";
+    }
+
 }

@@ -18,7 +18,7 @@ public class Pakli {
         for (String szin : szinek) {
             for (String ertek : ertekek) {
                 if (db < 21) {
-                    lapok[++db] = new Lap(ertek,szin);
+                    lapok[++db] = new Lap(ertek, szin);
                 }
             }
         }

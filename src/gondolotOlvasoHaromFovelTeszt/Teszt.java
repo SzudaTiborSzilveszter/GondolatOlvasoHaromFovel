@@ -19,6 +19,7 @@ public class Teszt {
         System.out.println("\nLap tesztek:");
         tesztLapErtek();
         tesztLapSzin();
+        tesztKulonbozoLapok();
         System.out.println("\nMinden teszt lefutott.");
     }
 
@@ -143,5 +144,13 @@ public class Teszt {
         assert eredeti.equals(lap.getSzin())
                 : "A Lap színe megváltozott";
         System.out.println("\tTeszt lap színe: ✔");
+    }
+
+    private static void tesztKulonbozoLapok() {
+        Lap lap1 = new Lap("🔔", "Ász");
+        Lap lap2 = new Lap("🍁", "Ász");
+        assert !lap1.megj().equals(lap2.megj())
+                : "A különböző lapok neve megegyezik";
+        System.out.println("\tTeszt különböző lapok: ✔");
     }
 }

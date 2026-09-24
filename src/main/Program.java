@@ -18,4 +18,15 @@ public class Program {
             );
         }
     }
+    
+    private static int melyik() {
+        System.out.println("Válassza ki a kártya oszlopát! (1-3):");
+        int valasztas = sc.nextInt();
+        while (valasztas < 1 || valasztas > 3) {
+            System.out.println("Nem megfelelő a szám!");
+            System.out.println("Válassza ki a kártya oszlopát! (1-3):");
+            valasztas = sc.nextInt();
+        }
+        return valasztas;
+    }
 }

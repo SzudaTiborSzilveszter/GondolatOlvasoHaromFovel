@@ -19,7 +19,7 @@ public class Teszt {
         System.out.println("Lap tesztek:");
         tesztLapErtek();
         tesztLapSzin();
-        System.out.println("Minden teszt sikeres.");
+        System.out.println("\nMinden teszt sikeres.");
     }
 
     private static void tesztLapokSzama() {
@@ -32,6 +32,7 @@ public class Teszt {
             }
         }
         assert db == 21 : "Nem 21 lap van a pakliban";
+        System.out.println("Teszt lapok száma: ");
     }
 
     private static void tesztNull() {
@@ -40,6 +41,7 @@ public class Teszt {
         for (int i = 1; i < lapok.length; i++) {
             assert lapok[i] != null : "Null lap található a pakliban";
         }
+        System.out.println("Teszt null: ");
     }
 
     private static void tesztAlahuzas() {
@@ -48,6 +50,7 @@ public class Teszt {
         for (int i = 1; i < lapok.length; i++) {
             assert lapok[i].megj().contains("_") : "A lap nevében nincs aláhúzás";
         }
+        System.out.println("Teszt aláhúzás: ");
     }    
     
       private static void tesztHaromOszlop() {
@@ -63,6 +66,7 @@ public class Teszt {
             }
             assert db == 3 : "Nem 3 lap van egy sorban";
         }
+        System.out.println("Teszt három oszlop: ");
     }
 
     private static void tesztOszlopErvenyes() {
@@ -72,6 +76,7 @@ public class Teszt {
         assert !oszlopErvenyes(0);
         assert !oszlopErvenyes(4);
         assert !oszlopErvenyes(-1);
+        System.out.println("Teszt oszlopok száma: ");
     }
 
     private static boolean oszlopErvenyes(int oszlop) {
@@ -90,6 +95,7 @@ public class Teszt {
             }
         }
         assert megvaltozott : "A keverés nem változtatta meg a sorrendet";
+        System.out.println("Teszt keverés: ");
     }
      private static void tesztKozepsoLap() {
         for (int oszlop = 1; oszlop <= 3; oszlop++) {
@@ -104,6 +110,7 @@ public class Teszt {
             assert valasztottOszlop.contains(pakli.ezVolt())
                     : "A kiválasztott oszlop nem került középre";
         }
+        System.out.println("Teszt középső lap: ");
     }
 
     private static void tesztDuplikacio() {
@@ -117,6 +124,7 @@ public class Teszt {
                         : "Duplikált lap található a pakliban";
             }
         }
+        System.out.println("Teszt duplikáció: ");
     }
 
     private static void tesztLapErtek() {
@@ -125,6 +133,7 @@ public class Teszt {
         lap.megj();
         assert eredeti.equals(lap.getErtek())
                 : "A Lap értéke megváltozott";
+        System.out.println("Teszt lap értéke: ");
     }
 
     private static void tesztLapSzin() {
@@ -133,6 +142,6 @@ public class Teszt {
         lap.megj();
         assert eredeti.equals(lap.getSzin())
                 : "A Lap színe megváltozott";
+        System.out.println("Teszt lap színe: ");
     }
-
 }
